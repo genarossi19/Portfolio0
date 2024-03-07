@@ -1,7 +1,8 @@
 import "/src/index.css";
 import Navbar from "./components/Navbar 01/Navbar";
+import { useEffect } from "react";
 import phoneme from "./assets/phoneme.png";
-import { motion } from "framer-motion";
+import { motion , useAnimation} from "framer-motion";
 import { FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 function App() {
@@ -26,6 +27,30 @@ function App() {
   const letterVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
+  };
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("visible");
+  }, [controls]);
+
+  const listVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 2, staggerChildren: 0.3 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.2, rotate: -1080 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { type: "spring", stiffness: 260, damping: 20 },
+    },
   };
 
   const title = "Genaro Rossi";
@@ -81,9 +106,14 @@ function App() {
               ))}
             </motion.p>
             {/* Redes sociales */}
-            <ul className="flex items-center gap-8 justify-center mt-20">
+            <motion.ul
+              className="flex items-center gap-8 justify-center mt-20"
+              initial="hidden"
+              animate={controls}
+              variants={listVariants}
+            >
               {/* GitHub */}
-              <li>
+              <motion.li variants={itemVariants}>
                 <a
                   href="https://github.com/genarossi19/"
                   target="_blank"
@@ -91,9 +121,9 @@ function App() {
                 >
                   <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
                 </a>
-              </li>
-                {/* Instagram */}
-              <li>
+              </motion.li>
+              {/* Instagram */}
+              <motion.li variants={itemVariants}>
                 <a
                   href="https://www.instagram.com/gena_rossi"
                   target="_blank"
@@ -101,9 +131,9 @@ function App() {
                 >
                   <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
                 </a>
-              </li>
+              </motion.li>
               {/* Whatsapp */}
-              <li>
+              <motion.li variants={itemVariants}>
                 <a
                   href="https://wa.link/gir1va"
                   target="_blank"
@@ -111,8 +141,8 @@ function App() {
                 >
                   <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={itemVariants}>
                 <a
                   href="https://github.com/genarossi19/"
                   target="_blank"
@@ -120,9 +150,8 @@ function App() {
                 >
                   <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
                 </a>
-              </li>
-              
-            </ul>
+              </motion.li>
+            </motion.ul>
           </div>
         </div>
       </div>

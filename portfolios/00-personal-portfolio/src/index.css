@@ -18,14 +18,14 @@ body {
   }
   
   .phoneimage:hover {
-    filter: grayscale(0%) drop-shadow(0 0 40px #646cff);
+    filter: grayscale(0%) drop-shadow(0 0 60px #A855F7);
   }
 .textshadow{
   will-change: filter;
   transition: filter 300ms;
 }
   .textshadow:hover{
-   filter:  drop-shadow(0 0 70px #646cff);
+   filter:  drop-shadow(0 0 70px #A855F7);
   }
   
 
