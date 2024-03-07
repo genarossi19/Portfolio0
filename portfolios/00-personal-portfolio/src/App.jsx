@@ -2,7 +2,8 @@ import "/src/index.css";
 import Navbar from "./components/Navbar 01/Navbar";
 import phoneme from "./assets/phoneme.png";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import AnimatedList from './components/Redes/AnimatedList';
+import { AnimatedLink, FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from './components/Redes/AnimatedLink';
 
 function App() {
   const textVariants = {
@@ -81,48 +82,12 @@ function App() {
               ))}
             </motion.p>
             {/* Redes sociales */}
-            <ul className="flex items-center gap-8 justify-center mt-20">
-              {/* GitHub */}
-              <li>
-                <a
-                  href="https://github.com/genarossi19/"
-                  target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-white group transition-colors ease-in-out"
-                >
-                  <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
-                </a>
-              </li>
-                {/* Instagram */}
-              <li>
-                <a
-                  href="https://www.instagram.com/gena_rossi"
-                  target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl  hover:border-[#D62976] group transition-colors ease-in-out"
-                >
-                  <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
-                </a>
-              </li>
-              {/* Whatsapp */}
-              <li>
-                <a
-                  href="https://wa.link/gir1va"
-                  target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#0D9C35] group transition-colors ease-in-out"
-                >
-                  <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/genarossi19/"
-                  target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#1863BD] group transition-colors ease-in-out"
-                >
-                  <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
-                </a>
-              </li>
-              
-            </ul>
+            <AnimatedList>
+      <AnimatedLink href="https://github.com/genarossi19/" borderColor="white" icon={<FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />} />
+      <AnimatedLink href="https://www.instagram.com/gena_rossi" borderColor="#D62976" icon={<FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />} />
+      <AnimatedLink href="https://wa.link/gir1va" borderColor="#0D9C35" icon={<FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />} />
+      <AnimatedLink href="https://github.com/genarossi19/" borderColor="#1863BD" icon={<FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />} />
+    </AnimatedList>
           </div>
         </div>
       </div>
