@@ -2,6 +2,7 @@ import "/src/index.css";
 import Navbar from "./components/Navbar 01/Navbar";
 import phoneme from "./assets/phoneme.png";
 import { motion } from "framer-motion";
+import { FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 function App() {
   const textVariants = {
@@ -28,7 +29,8 @@ function App() {
   };
 
   const title = "Genaro Rossi";
-  const description = "Desarrollador Junior frontend y estudiante de Ingeniería en Sistemas."
+  const description =
+    "Desarrollador Junior frontend y estudiante de Ingeniería en Sistemas.";
 
   return (
     // Pantalla principal
@@ -67,7 +69,7 @@ function App() {
               ))}
             </motion.h1>
             <motion.p
-              className="text-white text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl"
+              className="text-white text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mt-16"
               variants={textVariants2}
               initial="hidden"
               animate="visible"
@@ -78,6 +80,49 @@ function App() {
                 </motion.span>
               ))}
             </motion.p>
+            {/* Redes sociales */}
+            <ul className="flex items-center gap-8 justify-center mt-20">
+              {/* GitHub */}
+              <li>
+                <a
+                  href="https://github.com/genarossi19/"
+                  target="_blank"
+                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-white group transition-colors ease-in-out"
+                >
+                  <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
+                </a>
+              </li>
+                {/* Instagram */}
+              <li>
+                <a
+                  href="https://www.instagram.com/gena_rossi"
+                  target="_blank"
+                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl  hover:border-[#D62976] group transition-colors ease-in-out"
+                >
+                  <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
+                </a>
+              </li>
+              {/* Whatsapp */}
+              <li>
+                <a
+                  href="https://wa.link/gir1va"
+                  target="_blank"
+                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#0D9C35] group transition-colors ease-in-out"
+                >
+                  <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/genarossi19/"
+                  target="_blank"
+                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#1863BD] group transition-colors ease-in-out"
+                >
+                  <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
+                </a>
+              </li>
+              
+            </ul>
           </div>
         </div>
       </div>

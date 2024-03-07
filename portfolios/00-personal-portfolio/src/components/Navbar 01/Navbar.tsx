@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 
 import NavbarDefault from "./NavbarDefault";
 import NavbarFixed from "./NavbarFixed";
+import React from "react";
 
 function Navbar() {
   const [isScrollPast, setIsScrollPast] = useState<boolean>(false);
