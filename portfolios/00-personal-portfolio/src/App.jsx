@@ -2,8 +2,14 @@ import "/src/index.css";
 import Navbar from "./components/Navbar 01/Navbar";
 import phoneme from "./assets/phoneme.png";
 import { motion } from "framer-motion";
-import AnimatedList from './components/Redes/AnimatedList';
-import { AnimatedLink, FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from './components/Redes/AnimatedLink';
+import AnimatedList from "./components/Redes/AnimatedList";
+import {
+  AnimatedLink,
+  FaGithub,
+  FaInstagram,
+  FaWhatsapp,
+  FaLinkedin,
+} from "./components/Redes/AnimatedLink";
 
 function App() {
   const textVariants = {
@@ -83,11 +89,35 @@ function App() {
             </motion.p>
             {/* Redes sociales */}
             <AnimatedList>
-      <AnimatedLink href="https://github.com/genarossi19/" borderColor="white" icon={<FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />} />
-      <AnimatedLink href="https://www.instagram.com/gena_rossi" borderColor="#D62976" icon={<FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />} />
-      <AnimatedLink href="https://wa.link/gir1va" borderColor="#0D9C35" icon={<FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />} />
-      <AnimatedLink href="https://github.com/genarossi19/" borderColor="#1863BD" icon={<FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />} />
-    </AnimatedList>
+              <AnimatedLink
+                href="https://github.com/genarossi19/"
+                borderColor="border-white"
+                icon={
+                  <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
+                }
+              />
+              <AnimatedLink
+                href="https://www.instagram.com/gena_rossi"
+                borderColor="#D62976"
+                icon={
+                  <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
+                }
+              />
+              <AnimatedLink
+                href="https://wa.link/gir1va"
+                borderColor="#0D9C35"
+                icon={
+                  <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
+                }
+              />
+              <AnimatedLink
+                href="https://github.com/genarossi19/"
+                borderColor="#1863BD"
+                icon={
+                  <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
+                }
+              />
+            </AnimatedList>
           </div>
         </div>
       </div>

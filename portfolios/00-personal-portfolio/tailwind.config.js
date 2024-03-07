@@ -12,6 +12,9 @@ export default {
         light: "#FFFFFC",
         darkpurple: "#230046",
         lightpurple: "#320064",
+        instagram: "#D62976",
+        whatsapp: "#0D9C35",
+        linkedin: "#1863BD"
       }
       
     },
