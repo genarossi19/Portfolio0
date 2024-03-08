@@ -27,6 +27,16 @@ body {
   .textshadow:hover{
    filter:  drop-shadow(0 0 70px #A855F7);
   }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    transform-origin: 0%;
+    @apply bg-purple-800
+  }
   
 
 

@@ -2,8 +2,10 @@ import "/src/index.css";
 import Navbar from "./components/Navbar 01/Navbar";
 import { useEffect } from "react";
 import phoneme from "./assets/phoneme.png";
-import { motion , useAnimation} from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { FaGithub, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import ProgressBar from "./components/ProgressBar";
+import About from "./components/About";
 
 function App() {
   const textVariants = {
@@ -59,12 +61,15 @@ function App() {
 
   return (
     // Pantalla principal
-    <div id="screen" className="bg-backgray min-h-screen  ">
+
+    <div id="screen" className="bg-backgray min-h-screen   ">
+      <ProgressBar />
       <Navbar />
       {/* div pagina */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 min-h-screen ">
-        {/* div Imagen */}
-        <div id="phone" className=" relative h-screen  p-8 ms-2 lg:col-span-4 ">
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 min-h-screen ">
+        
+          {/* div Imagen */}
+        <div id="phone" className=" h-screen  p-8  lg:col-span-4 hidden sm:block bg-red-400 items-center justify-center" >
           {/* Imagen */}
           <motion.img
             id="phoneimage"
@@ -73,13 +78,14 @@ function App() {
             initial={{ opacity: 0, y: 50 }} // Posición inicial en la parte inferior
             animate={{ opacity: 1, y: 0 }} // Posición final en el centro
             transition={{ duration: 1 }}
-            className="h-1/2 sm:h-full object-cover  phoneimage "
+            className=" sm:h-full 2xl:h-[70%] object-cover justify-center items-center phoneimage "
+            
           />
         </div>
         {/* div content */}
-        <div id="content" className="col-span-8">
+        <div id="content" className="col-span-8  max-h-screen bg-green-200">
           {/* div Texto */}
-          <div id="text" className="inline-block">
+          <div id="text" className="inline-block justify-between">
             {/* Texto */}
             <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-purple-500 font-poppins font-bold textshadow text-center m-8 lg:ms-8"
@@ -105,9 +111,14 @@ function App() {
                 </motion.span>
               ))}
             </motion.p>
+            {/* about */}
+            <div id="about">
+            <About />
+            </div>
+
             {/* Redes sociales */}
             <motion.ul
-              className="flex items-center gap-8 justify-center mt-20"
+              className="flex items-center gap-8 2xl:gap-12 justify-center mt-10 2xl:mt-16"
               initial="hidden"
               animate={controls}
               variants={listVariants}
@@ -117,7 +128,7 @@ function App() {
                 <a
                   href="https://github.com/genarossi19/"
                   target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-white group transition-colors ease-in-out"
+                  className="p-2 lg:p-4 2xl:p-10 bg-red-200 lg:bg-blue-200 2xl:bg-green-200 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-white group transition-colors ease-in-out"
                 >
                   <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
                 </a>
@@ -127,7 +138,7 @@ function App() {
                 <a
                   href="https://www.instagram.com/gena_rossi"
                   target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl  hover:border-[#D62976] group transition-colors ease-in-out"
+                  className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl  hover:border-[#D62976] group transition-colors ease-in-out"
                 >
                   <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
                 </a>
@@ -137,7 +148,7 @@ function App() {
                 <a
                   href="https://wa.link/gir1va"
                   target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#0D9C35] group transition-colors ease-in-out"
+                  className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-[#0D9C35] group transition-colors ease-in-out"
                 >
                   <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
                 </a>
@@ -146,15 +157,19 @@ function App() {
                 <a
                   href="https://github.com/genarossi19/"
                   target="_blank"
-                  className="p-8 lg:p-4 xl:p-8 block border border-gray-300/30 rounded-full text-4xl  lg:text-2xl xl:text-4xl hover:border-[#1863BD] group transition-colors ease-in-out"
+                  className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-[#1863BD] group transition-colors ease-in-out"
                 >
                   <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
                 </a>
               </motion.li>
             </motion.ul>
+            <hr className="border border-purple-600 opacity-20 mt-10" />
           </div>
+          
+          
         </div>
-      </div>
+        
+      </main>
     </div>
   );
 }
