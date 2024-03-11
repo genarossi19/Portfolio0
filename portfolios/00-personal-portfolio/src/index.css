@@ -6,10 +6,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    
+    margin: 0;
     
     background-color: "#141414";
   }
+
+ 
+
 
   .phoneimage {
     filter: grayscale(100%);
@@ -23,9 +26,10 @@ body {
 .textshadow{
   will-change: filter;
   transition: filter 300ms;
+  filter:  drop-shadow(0 0 60px #A855F7);
 }
   .textshadow:hover{
-   filter:  drop-shadow(0 0 70px #A855F7);
+    filter:  drop-shadow(0 0 80px #A855F7);
   }
 
   .progress-bar {

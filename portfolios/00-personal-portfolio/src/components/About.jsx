@@ -15,7 +15,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="text-white text-center md:text-2xl lg:text-base xl:text-lg mt-10 px-4"
+      className="text-white text-wrap md:text-2xl lg:text-base xl:text-lg 2xl:text-3xl mt-10 px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
     >
