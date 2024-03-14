@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 function NavbarDefault() {
   return (
-    <nav className=" justify-between items-center px-10 py-5 hidden sm:flex">
+    <nav className=" justify-between items-center px-10 relative py-10 hidden sm:flex bg-orange-200  z-10">
       <div className="flex flex-row items-center gap-4">
         <FaGithub className="text-white w-10 h-10" />
         <a href="https://github.com/genarossi19" className="no-underline"target="_blank" rel="noopener noreferrer" >
