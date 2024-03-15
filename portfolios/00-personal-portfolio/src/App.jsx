@@ -60,14 +60,21 @@ function App() {
     "Desarrollador Junior frontend y estudiante de Ingeniería en Sistemas.";
 
   return (
-    // Pantalla principal
-    <div id="screen" className="bg-backgray min-h-screen overflow-hidden">
+    // Pantalla principal => le saque el min-h-screen
+    <div id="container" className="bg-backgray  overflow-x-hidden w-full">
       <ProgressBar />
+      {/* HEADER */}
       <Navbar />
-      {/* div pagina */}
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 h-full w-full">
+      {/* MAIN */}
+      <main className="ps-[10vh] pe-[10vh]">
+        {/* FEATURED BOX */}
+        <section className="relative flex h-full ">
+          
+
+        </section>
          {/* div Imagen */}
-         <div id="phone" className=" h-screen  p-8  lg:col-span-4 hidden sm:flex sm:flex-wrap " >
+         {/* h-screen  p-8  lg:col-span-4 hidden sm:flex sm:flex-wrap */}
+         <div id="phone" className=" flex justify-left content-center min-h-[80vh] w-1/2" >
           {/* Imagen */}
           <motion.img
             id="phoneimage"
