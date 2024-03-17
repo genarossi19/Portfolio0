@@ -15,7 +15,7 @@ const About = () => {
   return (
     <motion.div
       id="featured-text-info"
-      className="text-gray-200 text-xl mt-5 mb-7 px-8 pe-16"
+      className="text-gray-200 text-xl mt-5 mb-7 px-16 "
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
     >

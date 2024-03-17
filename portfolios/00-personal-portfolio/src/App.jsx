@@ -176,7 +176,7 @@ function App() {
         </section>
 
         
-        <hr className="border border-purple-600 opacity-20 m-2 " />
+        <hr className="border border-purple-600 opacity-20 " />
       </main>
     </div>
   );
