@@ -3,7 +3,38 @@
 @tailwind utilities;
 
 
+/* ----- BASE ----- */
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} */
 
+/* ----- SMOOTH SCROLL ----- */
+/* html{
+  scroll-behavior: smooth;
+} */
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar{
+  width: 10px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  @apply bg-gray-300
+}
+::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 30px;
+  @apply bg-purple-300
+ 
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #bbb;
+  @apply bg-purple-400 
+}
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -39,7 +70,7 @@ body {
     right: 0;
     height: 5px;
     transform-origin: 0%;
-    @apply bg-purple-800
+    @apply bg-purple-800 z-10
   }
 
 

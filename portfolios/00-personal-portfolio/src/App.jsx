@@ -17,14 +17,14 @@ function App() {
     },
   };
 
-  const textVariants2 = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.1, staggerChildren: 0.025 },
-    },
-  };
+  // const textVariants2 = {
+  //   hidden: { opacity: 0, x: -20 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { delay: 0.1, staggerChildren: 0.025 },
+  //   },
+  // };
 
   const letterVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -56,8 +56,6 @@ function App() {
   };
 
   const title = "Genaro Rossi";
-  const description =
-    "Desarrollador Junior frontend y estudiante de Ingeniería en Sistemas.";
 
   return (
     // Pantalla principal => le saque el min-h-screen
@@ -66,67 +64,68 @@ function App() {
       {/* HEADER */}
       <Navbar />
       {/* MAIN */}
-      <main className="ps-[10vh] pe-[10vh]">
+      <main id="wrapper" className="ps-[10vh] pe-[10vh]">
         {/* FEATURED BOX */}
-        <section className="relative flex h-full ">
-          
-
-        </section>
-         {/* div Imagen */}
-         {/* h-screen  p-8  lg:col-span-4 hidden sm:flex sm:flex-wrap */}
-         <div id="phone" className=" flex justify-left content-center min-h-[80vh] w-1/2" >
-          {/* Imagen */}
-          <motion.img
-            id="phoneimage"
-            src={phoneme}
-            alt="phone"
-            initial={{ opacity: 0, y: 50 }} // Posición inicial en la parte inferior
-            animate={{ opacity: 1, y: 0 }} // Posición final en el centro
-            transition={{ duration: 1 }}
-            className=" sm:h-full  object-cover justify-center items-center phoneimage mx-auto"
-            
-          />
-        </div>
-        {/* div content */}
-        <div
-          id="content"
-          className="col-span-8 flex flex-col justify-between max-h-screen"
+        <section
+          id="featured-box"
+          className="relative flex h-screen min-h-[500px]"
         >
-          {/* div Texto */}
-          <div id="text" className="text-wrap flex flex-col justify-between h-full">
-            {/* Texto */}
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-purple-500 font-poppins font-bold textshadow text-wrap mt-8 p-4"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
+          {/* div Imagen */}
+          {/* h-screen  p-8  lg:col-span-4 hidden sm:flex sm:flex-wrap */}
+          <div
+            id="featured-image"
+            className=" flex justify-left content-center h-[100vh] min-w-[25%] p-4"
+          >
+            {/* Imagen */}
+            <div
+              id="image"
+              className="m-auto object-contain justify-center items-center"
             >
-              {title.split("").map((char, index) => (
-                <motion.span key={index} variants={letterVariants}>
-                  {char}
-                </motion.span>
-              ))}
-            </motion.h1>
-            <motion.p
-              className="text-white text-wrap p-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mt-8"
-              variants={textVariants2}
-              initial="hidden"
-              animate="visible"
-            >
-              {description.split("").map((char, index) => (
-                <motion.span key={index} variants={letterVariants}>
-                  {char}
-                </motion.span>
-              ))}
-            </motion.p>
-            {/* about */}
-            <div id="about">
-              <About />
+              <motion.img
+                id="phoneimage"
+                src={phoneme}
+                alt="phone"
+                initial={{ opacity: 0, y: 50 }} // Posición inicial en la parte inferior
+                animate={{ opacity: 1, y: 0 }} // Posición final en el centro
+                transition={{ duration: 1 }}
+                className=" sm:h-full w-full phoneimage m-auto"
+              />
             </div>
           </div>
+          {/* div Texto */}
+          {/* text-wrap flex flex-col justify-between h-full */}
+          <div
+            id="featured-text"
+            className="relative flex justify-center min-h-[80vh] flex-col min-w-[75%] ps-5"
+          >
+            {/* Texto */}
+            <div
+              id="featured-name"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold m-5  "
+            >
+              {/* text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-purple-500 font-poppins font-bold textshadow text-wrap mt-8 p-4 */}
+              <motion.h1
+                className="capitalize text-purple-500 textshadow;"
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {title.split("").map((char, index) => (
+                  <motion.span key={index} variants={letterVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+            </div>
+
+            {/* text-info */}
+            <div id="featured-text-info">
+              <About />
+            </div>
+            <div id="social-icons" className=" w-auto  pe-32 ps-8 ">
           {/* Redes sociales */}
           <motion.ul
-            className="flex items-center gap-8 2xl:gap-12 justify-center mt-10 2xl:mt-16"
+            className="flex items-baseline justify-start gap-16 2xl:gap-12 mt-[2em] "
             initial="hidden"
             animate={controls}
             variants={listVariants}
@@ -136,7 +135,8 @@ function App() {
               <a
                 href="https://github.com/genarossi19/"
                 target="_blank"
-                className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-white group transition-colors ease-in-out"
+                // p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-white group transition-colors ease-in-out
+                className="flex justify-center items-center w-[100px] h-[100px]  text-4xl border border-gray-300/30 rounded-full  hover:border-white group transition-colors ease-in-out "
               >
                 <FaGithub className="text-gray-300/60 group-hover:text-white transition-colors ease-in-out" />
               </a>
@@ -146,7 +146,7 @@ function App() {
               <a
                 href="https://www.instagram.com/gena_rossi"
                 target="_blank"
-                className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl  hover:border-[#D62976] group transition-colors ease-in-out"
+                className="flex justify-center items-center w-[100px] h-[100px]  text-4xl border border-gray-300/30 rounded-full   hover:border-[#D62976] group transition-colors ease-in-out"
               >
                 <FaInstagram className="text-gray-300/60 group-hover:text-[#D62976] transition-colors ease-in-out" />
               </a>
@@ -156,7 +156,7 @@ function App() {
               <a
                 href="https://wa.link/gir1va"
                 target="_blank"
-                className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-[#0D9C35] group transition-colors ease-in-out"
+                className="flex justify-center items-center w-[100px] h-[100px]  text-4xl border border-gray-300/30 rounded-full  hover:border-[#0D9C35] group transition-colors ease-in-out"
               >
                 <FaWhatsapp className="text-gray-300/60 group-hover:text-[#0D9C35] transition-colors ease-in-out" />
               </a>
@@ -165,14 +165,18 @@ function App() {
               <a
                 href="https://github.com/genarossi19/"
                 target="_blank"
-                className="p-2 lg:p-4 2xl:p-10 block border border-gray-300/30 rounded-full text-2xl  lg:text-4xl 2xl:text-6xl hover:border-[#1863BD] group transition-colors ease-in-out"
+                className="flex justify-center items-center w-[100px] h-[100px]  text-4xl border border-gray-300/30 rounded-full  hover:border-[#1863BD] group transition-colors ease-in-out"
               >
                 <FaLinkedin className="text-gray-300/60 group-hover:text-[#1863BD] transition-colors ease-in-out" />
               </a>
             </motion.li>
           </motion.ul>
-          <hr className="border border-purple-600 opacity-20 my-10" />
         </div>
+          </div>
+        </section>
+
+        
+        <hr className="border border-purple-600 opacity-20 m-2 " />
       </main>
     </div>
   );
