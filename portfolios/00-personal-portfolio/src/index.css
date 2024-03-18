@@ -23,17 +23,17 @@
 }
 ::-webkit-scrollbar-track{
   background: #f1f1f1;
-  @apply bg-gray-300
+  @apply bg-purple-200
 }
 ::-webkit-scrollbar-thumb{
   background: #ccc;
   border-radius: 30px;
-  @apply bg-purple-300
+  @apply bg-purple-500
  
 }
 ::-webkit-scrollbar-thumb:hover{
   background: #bbb;
-  @apply bg-purple-400 
+  @apply bg-purple-600
 }
 body {
     font-family: 'Poppins', sans-serif;

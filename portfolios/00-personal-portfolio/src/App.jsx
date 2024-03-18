@@ -64,22 +64,22 @@ function App() {
       {/* HEADER */}
       <Navbar />
       {/* MAIN */}
-      <main id="wrapper" className="ps-[10vh] pe-[10vh]">
+      <main id="wrapper" className=" px-[15vh]">
         {/* FEATURED BOX */}
         <section
           id="featured-box"
-          className="relative flex h-screen min-h-[500px]"
+          className="relative flex h-screen mmd:flex-col mmd:justify-center "
         >
           {/* div Imagen */}
           {/* h-screen  p-8  lg:col-span-4 hidden sm:flex sm:flex-wrap */}
           <div
             id="featured-image"
-            className=" flex justify-left content-center h-[100vh] min-w-[25%] p-4"
+            className=" flex justify-left content-center h-[100vh] min-w-[25%] p-4 mmd:order-1 mmd:justify-center mmd:hidden  mmd:mt-[65px] "
           >
             {/* Imagen */}
             <div
               id="image"
-              className="m-auto object-contain justify-center items-center"
+              className="m-auto mmd:m-0  object-contain justify-center items-center"
             >
               <motion.img
                 id="phoneimage"
@@ -88,7 +88,7 @@ function App() {
                 initial={{ opacity: 0, y: 50 }} // Posición inicial en la parte inferior
                 animate={{ opacity: 1, y: 0 }} // Posición final en el centro
                 transition={{ duration: 1 }}
-                className=" sm:h-full w-full phoneimage m-auto"
+                className=" h-full w-full mmd:h-1/2   phoneimage m-auto"
               />
             </div>
           </div>
@@ -96,12 +96,12 @@ function App() {
           {/* text-wrap flex flex-col justify-between h-full */}
           <div
             id="featured-text"
-            className="relative flex justify-center min-h-[80vh] flex-col min-w-[75%] ps-5"
+            className="relative flex justify-center min-h-[80vh] flex-col min-w-[75%] ps-5 mxl:p-0 mmd:w-full mmd:order-2 mmd:align-start mmd:min-h-[60vh]"
           >
             {/* Texto */}
             <div
               id="featured-name"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold m-5  "
+              className="text-5xl lg:text-6xl font-bold m-5 msm:text-4xl "
             >
               {/* text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-purple-500 font-poppins font-bold textshadow text-wrap mt-8 p-4 */}
               <motion.h1
@@ -122,10 +122,10 @@ function App() {
             <div id="featured-text-info">
               <About />
             </div>
-            <div id="social-icons" className=" w-auto  pe-32 ps-8 ">
+            <div id="social-icons" className=" w-auto  m-5  ">
           {/* Redes sociales */}
           <motion.ul
-            className="flex items-baseline justify-start gap-16 2xl:gap-12 mt-[2em] "
+            className="flex items-baseline justify-start gap-16 2xl:gap-12 mt-[5em] mmd:mt-[2em]"
             initial="hidden"
             animate={controls}
             variants={listVariants}
